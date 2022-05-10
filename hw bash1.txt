@@ -1,0 +1,49 @@
+1) Посмотреть где я - pwd
+2) Создать папку - mkdir homework1
+3) Зайти в папку - cd homework1
+4) Создать 3 папки - mkdir hw_1 hw_2 hw_3
+5) Зайти в любоую папку - cd hw_1
+6) Создать 5 файлов (3 txt, 2 json) - touch t1.txt t2.txt t3.txt j1.json j2.json
+7) Создать 3 папки - mkdir 1 2 3
+8. Вывести список содержимого папки - ls -la
+9) + Открыть любой txt файл - vim t1.txt
+10) + написать туда что-нибудь, любой текст. - i затем набор текста
+11) + сохранить и выйти. -  esc :wq
+12) Выйти из папки на уровень выше - cd ..
+—
+13) переместить любые 2 файла, которые вы создали, в любую другую папку. - cd hw_1
+									   mv t2.txt t3.txt /e/group27/homework1/hw_2
+
+	или 2 вариант: mv /e/group27/homework1/hw_1/t2.txt /e/group27/homework1/hw_1/t3.txt /e/group27/homework1/hw_2
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку. - в зависимости от того, каким путём пошли в предыдущем шаге 2 варианта:
+
+1: cp j1.json j2.json /e/group27/homework1/hw_3
+
+2: cp /e/group27/homework1/hw_1/j1.json /e/group27/homework1/hw_1/j2.json /e/group27/homework1/hw_3
+
+15) Найти файл по имени - find hw_1/ -name t1.txt
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает. -  tale -f t1.txt затем открываем файл в блокноте, вносим изменения, 
+сохраняем и наблюдаем отображение изменений в терминале в реальном времени
+17) вывести несколько первых строк из текстового файла - head -2 t1.txt
+18) вывести несколько последних строк из текстового файла - tail -2 t1.txt
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает. - less t1.txt
+20) вывести дату и время - date
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request - curl 'http://162.55.220.72:5005/terminal-hw-request'
+curl 'http://162.55.220.72:5005/get_method?name=Azamat&age=32'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    22  100    22    0     0    156      0 --:--:-- --:--:-- --:--:--   158["(Azamat)","(32)\""]
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+#!/bin/bash
+cd homework1
+mkdir hw_1 hw_2 hw_3
+cd hw_1
+touch t1.txt t2.txt t3.txt j1.json j2.json
+mkdir 1 2 3
+ls -la
+mv t2.txt t3.txt /e/group27/homework1/hw_2
